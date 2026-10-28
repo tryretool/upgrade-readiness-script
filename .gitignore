@@ -1,0 +1,6 @@
+# reports describe a real deployment: never commit them
+retool-upgrade-report*.json
+*.report.json
+demo-output/
+.DS_Store
+__pycache__/
