@@ -5,12 +5,16 @@ customer reviews and uploads to Retool. Read-only: it never changes the deployme
 
 ## Run it
 
-Download and run it on a machine that can reach your Retool deployment (`kubectl` or `docker`):
+Download and run it on a machine that can reach your Retool deployment (`kubectl` or `docker`).
+
+While this repository is internal, download with the GitHub CLI (`gh auth login` first):
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/tryretool/upgrade-readiness-script/main/collect.py
+gh api repos/tryretool/upgrade-readiness-script/contents/collect.py -H "Accept: application/vnd.github.raw" > collect.py
 python3 collect.py -o retool-upgrade-report.json
 ```
+
+Once the repository is public, `curl -fsSLO https://raw.githubusercontent.com/tryretool/upgrade-readiness-script/main/collect.py` does the same.
 
 Open `retool-upgrade-report.json` and read it. It is the only thing the script produces, and it is
 yours to review before you share it. Then upload it to the Upgrade Readiness Assistant, which returns
